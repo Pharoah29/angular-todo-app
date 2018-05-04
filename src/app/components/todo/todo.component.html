@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <div class="form-group text-center">
+    <h1>My Todo List</h1>
+    <form role="form">
+      <input type="text" class="form-control input-lg" placeholder="What should  I do?" name="taskItem" (keyup.enter)="AddToList($event)">
+    </form>
+  </div>
+  <ul class="list-group">
+
+    <li href="#" class="list-group-item" *ngFor="let item of todoList;index as i" (click)="Checked($event,i)">
+
+      {{item}}
+      <a (click)="RemoveFromList(i)" class="close">&times;</a>
+    </li>
+
+
+    <li href="#" class="list-group-item todo-footer" *ngIf="todoList.length > 0">
+      <span>{{todoList.length}} Items Left</span>
+      <span class="pull-right">
+        <a herf="">Completed</a>
+      </span>
+    </li>
+  </ul>
+
+
+
+</div>
