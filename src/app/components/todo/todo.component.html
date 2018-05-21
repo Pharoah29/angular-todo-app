@@ -17,7 +17,7 @@
     <li href="#" class="list-group-item todo-footer" *ngIf="todoList.length > 0">
       <span>{{todoList.length}} Items Left</span>
       <span class="pull-right">
-        <a herf="">Completed</a>
+        <a (click)="removeAll()">Completed</a>
       </span>
     </li>
   </ul>
