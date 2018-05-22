@@ -1,0 +1,15 @@
+<ul class="list-group">
+
+  <li href="#" class="list-group-item" *ngFor="let item of items;index as i">
+    {{item}}
+    <a class="close" (click)="removeItem(i)">&times;</a>
+  </li>
+
+
+  <li href="#" class="list-group-item todo-footer" *ngIf="items.length > 0">
+    <span>{{items.length}} Items Left</span>
+    <span class="pull-right" (click)="clearAll()">
+      <a>Clear All</a>
+    </span>
+  </li>
+</ul>

@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
-
+import { Component } from "@angular/core";
+import { Http } from "@angular/http";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'My Todo List';
+  title = "My Todo List";
 
-  constructor(){
+  constructor(private http: Http) {
+   // const data = this.getJSONData();
+  }
 
-    debugger;
+  private getJSONData() {
+    return this.http.get("../assets/data.store.json").subscribe(res => {
+      debugger;
+    });
   }
 }

@@ -5,23 +5,11 @@
       <input type="text" class="form-control input-lg" placeholder="What should  I do?" name="taskItem" (keyup.enter)="AddToList($event)">
     </form>
   </div>
-  <ul class="list-group">
 
-    <li href="#" class="list-group-item" *ngFor="let item of todoList;index as i" (click)="Checked($event,i)">
-
-      {{item}}
-      <a (click)="RemoveFromList(i)" class="close">&times;</a>
-    </li>
-
-
-    <li href="#" class="list-group-item todo-footer" *ngIf="todoList.length > 0">
-      <span>{{todoList.length}} Items Left</span>
-      <span class="pull-right">
-        <a (click)="removeAll()">Completed</a>
-      </span>
-    </li>
-  </ul>
-
+  <app-todo-items 
+  [items]="todoList" 
+  (remove)="onItemRemove($event)" 
+  (clear)="onClear()"></app-todo-items>
 
 
 </div>

@@ -24,20 +24,16 @@ export class TodoComponent {
     item.value = "";
   }
 
-  public Checked(event, item): void {
-    event.target.classList.add("checked");
-  }
-
   /**
    * Remove the selected  item from the Todo list
    *
    * @param event The item
    */
-  public RemoveFromList(item: number): void {
+  public onItemRemove(item: number): void {
     this.todoList.splice(item, 1);
   }
 
-  removeAll() {
+  onClear() {
     this.todoList = [];
   }
 }
